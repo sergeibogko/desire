@@ -75,24 +75,6 @@
     margin-bottom: 16px;
     max-width: 475px;
   }
-  &__info-email {
-    font-weight: 600;
-    font-size: 14px;
-    color: $title;
-    margin-bottom: 22px;
-    padding-left: 30px;
-    display: inline-block;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      background-image: url(../images/envelope.svg);
-      top: 8px;
-      left: 0;
-      width: 16px;
-      height: 12px;
-    }
-  }
   &__form {
     display: flex;
   }
@@ -230,7 +212,7 @@
       left: 0;
       right: 0;
       max-width: 252px;
-      height: 1px;
+      height: 2px;
       margin: 0 auto;
       background: #6d7278;
     }
@@ -246,6 +228,8 @@
 .breadcrumbs {
   background: rgba(#dfdfdf, 0.5);
   padding: 13px 14px;
+  position: relative;
+  z-index: 999;
   &__list {
     display: flex;
   }
@@ -306,7 +290,7 @@
       left: 0;
       bottom: 0;
       width: 185px;
-      height: 1px;
+      height: 2px;
       background: #6d7278;
     }
   }
@@ -330,7 +314,7 @@
       content: "";
       position: absolute;
       width: 250px;
-      height: 1px;
+      height: 2px;
       bottom: 0;
       left: 0;
       right: 0;
@@ -389,7 +373,7 @@
     &::after {
       content: "";
       position: absolute;
-      height: 1px;
+      height: 2px;
       background: #6d7278;
       width: 80%;
       margin: 0 auto;
@@ -422,7 +406,7 @@
     &::after {
       content: "";
       position: absolute;
-      height: 1px;
+      height: 2px;
       background: #6d7278;
       width: 200px;
       margin: 0 auto;
@@ -630,7 +614,7 @@
       bottom: 0;
       left: 0;
       width: 200px;
-      height: 1px;
+      height: 2px;
       background-color: #6d7278;
     }
   }
@@ -690,7 +674,7 @@
       bottom: 0;
       left: 0;
       width: 200px;
-      height: 1px;
+      height: 2px;
       background: #6d7278;
     }
   }
@@ -729,5 +713,134 @@
   }
   &__item {
     margin: 0 auto;
+  }
+}
+
+.map {
+  margin-top: -53px;
+  margin-bottom: 50px;
+}
+
+.contact {
+  padding-bottom: 100px;
+  &__title {
+    color: $title;
+    @extend %title-font;
+    font-size: 36px;
+    line-height: 60px;
+    padding-bottom: 35px;
+    margin-bottom: 40px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      height: 2px;
+      background-color: #6d7278;
+    }
+  }
+  &__box {
+    padding-left: 284px;
+  }
+  &__social {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  &__social-item + &__social-item {
+    padding-left: 40px;
+  }
+  &__text {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 27px;
+  }
+  &__phone {
+    color: $default;
+  }
+  &__city {
+    margin-bottom: 16px;
+  }
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__form-input {
+    border: 1px solid #dfdfdf;
+    border-radius: 20px;
+    padding: 6px 17px;
+    margin-bottom: 13px;
+    width: 49%;
+    &::placeholder {
+      color: #a1a1a1;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+  &__form-area {
+    width: 100%;
+    border: 1px solid #dfdfdf;
+    border-radius: 24px;
+    padding: 14px 17px;
+    margin-bottom: 20px;
+    min-height: 125px;
+    resize: none;
+    &::placeholder {
+      color: #a1a1a1;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
+  &__form-btn {
+    border: none;
+    background-color: $title;
+    color: #fffff0;
+    font-weight: 600;
+    border-radius: 21px;
+    padding: 6px 60px;
+    cursor: pointer;
+  }
+}
+
+.contact-slider {
+  padding-bottom: 102px;
+  &__link {
+    position: relative;
+    margin-bottom: 20px;
+    &:hover {
+      .contact-slider__title {
+        opacity: 1;
+      }
+    }
+  }
+  &__img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+  }
+  &__title {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(#fff, 0.6);
+    color: $title;
+    @extend %title-font;
+    line-height: 22px;
+    padding: 0 10px;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
   }
 }
